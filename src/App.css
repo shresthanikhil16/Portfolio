@@ -1,0 +1,20 @@
+/* ══════════════════════════════════════════════
+   PORTFOLIO — ARCTIC EDITION
+   CSS is now split into separate files:
+
+   Global (imported in App.jsx):
+     src/styles/tokens.css      — CSS variables & theme
+     src/styles/utilities.css   — shared utility classes
+     src/styles/animations.css  — scroll-reveal & all animations
+     src/styles/responsive.css  — media queries
+
+   Per-page (imported in each page JSX):
+     src/pages/Nav.css
+     src/pages/Hero.css
+     src/pages/About.css
+     src/pages/Skills.css
+     src/pages/Projects.css
+     src/pages/Education.css
+     src/pages/Contact.css
+     src/pages/Showcase.css
+   ══════════════════════════════════════════════ */

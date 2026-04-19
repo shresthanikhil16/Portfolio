@@ -1,0 +1,210 @@
+/* ══════════════════════════════════════════════
+   ABOUT
+   ══════════════════════════════════════════════ */
+.about {
+  position: relative;
+  padding: 100px 48px;
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.about-bg-text {
+  position: absolute;
+  font-family: var(--font-head);
+  font-size: clamp(180px, 22vw, 320px);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(74, 158, 202, 0.06);
+  letter-spacing: -10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  filter: blur(3px);
+  animation: floatText 8s ease-in-out infinite;
+}
+@keyframes floatText {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(-2deg);
+  }
+  50% {
+    transform: translate(-50%, -52%) rotate(1deg);
+  }
+}
+
+.about-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-heading {
+  font-family: var(--font-head);
+  font-size: clamp(52px, 7vw, 90px);
+  color: var(--white);
+  letter-spacing: 2px;
+  line-height: 0.9;
+  margin-bottom: 24px;
+}
+
+.about-body {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.about-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.about-pillar:hover {
+  border-color: var(--accent);
+}
+
+.pillar-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--accent);
+}
+
+.pillar-items {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.about-card {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  padding: 36px 28px;
+  border: 1px solid var(--line);
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.about-card-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: var(--accent);
+  opacity: 0.06;
+  filter: blur(60px);
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.about-card-initials {
+  font-family: var(--font-head);
+  font-size: 56px;
+  letter-spacing: 8px;
+  color: var(--accent);
+  opacity: 0.7;
+  line-height: 1;
+}
+.about-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+.about-card-role {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--text-dim);
+}
+.about-card-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--line);
+  margin: 4px 0;
+}
+.about-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.card-tag {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  padding: 4px 10px;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+}
+
+/* Make small tags fully transparent so background image shows through */
+.card-tag {
+  background: transparent;
+}
+.about-card-location {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+/* ── Optional design2.jpg background for brief profile page ──
+  If `design2.jpg` lives under `src/assets/images`, it will be bundled and
+  referenced here. Example path: `src/assets/images/design2.jpg`. */
+.about.background-design2 {
+  /* keep existing background as fallback */
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.about.background-design2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/images/design2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  /* parallax translate comes from JS-set CSS var */
+  transform: translateY(var(--parallax-y, 0px)) scale(1.02);
+  will-change: transform;
+}
+.about.background-design2::after {
+  /* dark overlay for readability */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 12, 16, 0.55);
+  z-index: 1;
+}
+.about.background-design2 .about-inner {
+  position: relative;
+  z-index: 2; /* ensures content sits above image + overlay */
+}

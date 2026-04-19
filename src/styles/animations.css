@@ -1,0 +1,538 @@
+/* ══════════════════════════════════════════════
+   GLOBAL ANIMATION SYSTEM
+   ══════════════════════════════════════════════ */
+
+/* ── Scroll-reveal: base invisible state ── */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-animate="left"] {
+  opacity: 0;
+  transform: translateX(-44px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-animate="right"] {
+  opacity: 0;
+  transform: translateX(44px);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-animate="scale"] {
+  opacity: 0;
+  transform: scale(0.88);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-animate].is-visible,
+[data-animate="left"].is-visible,
+[data-animate="right"].is-visible,
+[data-animate="scale"].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays */
+[data-delay="1"] {
+  transition-delay: 0.08s;
+}
+[data-delay="2"] {
+  transition-delay: 0.16s;
+}
+[data-delay="3"] {
+  transition-delay: 0.24s;
+}
+[data-delay="4"] {
+  transition-delay: 0.32s;
+}
+[data-delay="5"] {
+  transition-delay: 0.4s;
+}
+[data-delay="6"] {
+  transition-delay: 0.48s;
+}
+[data-delay="7"] {
+  transition-delay: 0.56s;
+}
+[data-delay="8"] {
+  transition-delay: 0.64s;
+}
+[data-delay="9"] {
+  transition-delay: 0.72s;
+}
+[data-delay="10"] {
+  transition-delay: 0.8s;
+}
+[data-delay="11"] {
+  transition-delay: 0.88s;
+}
+[data-delay="12"] {
+  transition-delay: 0.96s;
+}
+[data-delay="13"] {
+  transition-delay: 1.04s;
+}
+[data-delay="14"] {
+  transition-delay: 1.12s;
+}
+[data-delay="15"] {
+  transition-delay: 1.2s;
+}
+
+/* ── Respect reduced-motion ── */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  [data-animate="left"],
+  [data-animate="right"],
+  [data-animate="scale"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ── NAV: slide down on load ── */
+.nav {
+  animation: nav-drop 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes nav-drop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ── Nav logo soft glow pulse ── */
+.nav-logo {
+  animation: logo-glow 5s ease-in-out infinite;
+}
+@keyframes logo-glow {
+  0%,
+  100% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 24px rgba(74, 158, 202, 0.45);
+  }
+}
+
+/* ── Nav links: underline slide in ── */
+.nav-links a {
+  position: relative;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ── HERO: staggered entrance animations ── */
+.hero-label {
+  animation: hero-up 0.7s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-title {
+  animation: hero-up 0.8s 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-selectors {
+  animation: hero-up 0.7s 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-cta-row {
+  animation: hero-up 0.7s 0.82s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.spline-right {
+  animation: hero-up 1s 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-annotation {
+  animation: hero-fade 1s 1.1s both;
+}
+.scroll-hint {
+  animation: hero-fade 1s 1.4s both;
+}
+
+@keyframes hero-up {
+  from {
+    opacity: 0;
+    transform: translateY(44px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Hero grid lines subtle drift ── */
+.hero-grid-lines {
+  animation: grid-drift 20s linear infinite;
+}
+@keyframes grid-drift {
+  from {
+    background-position:
+      0 0,
+      0 0;
+  }
+  to {
+    background-position:
+      60px 60px,
+      60px 60px;
+  }
+}
+
+/* ── Hero glow orbs: slow float ── */
+.glow-1 {
+  animation: glow-float-a 14s ease-in-out infinite;
+}
+.glow-2 {
+  animation: glow-float-b 18s ease-in-out infinite;
+}
+.glow-3 {
+  animation: glow-float-c 11s ease-in-out infinite;
+}
+
+@keyframes glow-float-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-28px, 22px) scale(1.08);
+  }
+}
+@keyframes glow-float-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(22px, -28px) scale(0.92);
+  }
+}
+@keyframes glow-float-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.08;
+  }
+  50% {
+    transform: translate(-18px, 14px) scale(1.12);
+    opacity: 0.15;
+  }
+}
+
+/* ── CTA button: shimmer sweep on hover ── */
+.cta-btn {
+  position: relative;
+  overflow: hidden;
+}
+.cta-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(74, 158, 202, 0.15),
+    transparent
+  );
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.cta-btn:hover::after {
+  left: 160%;
+}
+.cta-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Tag: hover glow ── */
+.tag {
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+.tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 12px rgba(74, 158, 202, 0.2);
+  transform: translateY(-1px);
+}
+
+/* ── Scroll hint: text flicker ── */
+.scroll-hint span:first-child {
+  animation: text-flicker 4s ease-in-out infinite;
+}
+@keyframes text-flicker {
+  0%,
+  90%,
+  100% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.3;
+  }
+}
+
+/* ── About card: float on hover ── */
+.about-card {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s,
+    box-shadow 0.4s;
+}
+.about-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 50px rgba(74, 158, 202, 0.1);
+}
+
+/* ── About pillar: left-slide reveal on hover ── */
+.about-pillar {
+  transition:
+    border-color 0.25s,
+    background 0.25s,
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.about-pillar:hover {
+  border-color: var(--accent);
+  transform: translateX(6px);
+}
+
+/* ── Card tag hover ── */
+.card-tag {
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
+}
+.card-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* skill-bar-fill animation removed (no visual progress bars) */
+
+/* ── Skills stat numbers: shimmer ── */
+.skills-stat-num {
+  background: linear-gradient(
+    90deg,
+    var(--white) 0%,
+    var(--accent) 50%,
+    var(--white) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: stat-shimmer 4s ease-in-out infinite;
+}
+@keyframes stat-shimmer {
+  0%,
+  100% {
+    background-position: 0% 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+}
+
+/* ── Project cards: lift + glow on hover ── */
+.project-card {
+  transition:
+    background 0.3s,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s;
+}
+.project-card:hover {
+  background: var(--bg-2);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+.featured-project {
+  transition: box-shadow 0.4s;
+}
+.featured-project:hover {
+  box-shadow: 0 24px 60px rgba(74, 158, 202, 0.1);
+}
+
+/* ── Filter button fill sweep ── */
+.filter-btn {
+  position: relative;
+  overflow: hidden;
+}
+.filter-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent-dim);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+  z-index: 0;
+}
+.filter-btn:hover::before {
+  transform: scaleX(1);
+}
+.filter-btn > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Tech tag: hover ── */
+.tech-tag {
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s;
+}
+.tech-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* ── Education dots: ring pulse ── */
+.edu-connector {
+  position: relative;
+}
+.edu-dot {
+  position: relative;
+}
+.edu-dot::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  animation: edu-ring 2.8s ease-out infinite;
+  opacity: 0;
+}
+@keyframes edu-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* ── Education card hover ── */
+.edu-card {
+  transition:
+    border-color 0.3s,
+    background 0.3s,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.edu-card:hover {
+  background: var(--surface);
+  transform: translateX(6px);
+}
+
+/* ── Contact info row ── */
+.contact-info-row {
+  transition:
+    background 0.2s,
+    padding-left 0.25s;
+}
+.contact-info-row:hover {
+  background: var(--surface);
+  padding-left: 24px;
+}
+
+/* ── Social links: bounce on hover ── */
+.social-link {
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    background 0.2s,
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.social-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+  transform: translateY(-4px);
+}
+
+/* ── Form input: glow on focus ── */
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(74, 158, 202, 0.12);
+}
+
+/* ── Section eyebrow: expand on hover ── */
+.section-eyebrow {
+  display: inline-block;
+  transition:
+    letter-spacing 0.35s ease,
+    color 0.2s;
+  cursor: default;
+}
+.section-eyebrow:hover {
+  letter-spacing: 6px;
+}
+
+/* ── Closing title accent: sweep gradient ── */
+.closing-title .accent-stroke {
+  position: relative;
+}
+.closing-title .accent-stroke::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  background-size: 200% 100%;
+  animation: line-sweep 3s ease-in-out infinite;
+}
+@keyframes line-sweep {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
