@@ -1,44 +1,73 @@
 import "./Skills.css";
 
-const skills = [
-  { name: "React", pct: 90 },
-  { name: "React Native", pct: 85 },
-  { name: "Flutter", pct: 80 },
-  { name: "Framer Motion", pct: 87 },
-  { name: "Tailwind CSS", pct: 92 },
-  { name: "MongoDB", pct: 83 },
+const techStack = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Tailwind CSS",
+  "React Native",
+  "Flutter",
+  "Node.js",
+  "MongoDB",
+  "FastAPI",
+  "Framer Motion",
 ];
 
-const summary =
-  "Building cross-platform mobile apps with React Native & Flutter • Crafting polished web interfaces with React & Tailwind CSS • Bringing UIs to life with Framer Motion animations • Storing and querying data with MongoDB";
+const personalSkills = [
+  "Creativity",
+  "Team Work",
+  "Organisation",
+  "Problem Solving",
+  "Communication",
+];
 
 export default function Skills() {
   return (
     <section className="skills-section" id="skills">
-      <div className="skills-section-header" data-animate>
-        <p className="section-eyebrow">[ SKILLS ]</p>
-        <h2 className="section-title">
-          TECH STACK &amp;
-          <br />
-          <span className="accent-stroke">STRENGTHS</span>
-        </h2>
-        <p className="skills-summary">{summary}</p>
-      </div>
+      <div className="skills-container">
+        {/* ── Header ── */}
+        <div className="skills-header" data-animate>
+          <span className="skills-index">03</span>
+          <div className="skills-header-text">
+            <h2 className="skills-title">TECH STACK</h2>
+            <div className="skills-header-line" />
+          </div>
+        </div>
 
-      <div className="skills-bars-grid">
-        {skills.map((skill, i) => (
-          <div
-            className="skill-bar-row"
-            key={skill.name}
-            data-animate
-            data-delay={Math.min(i + 3, 15)}
-          >
-            <div className="skill-bar-meta">
-              <span className="skill-bar-name">{skill.name}</span>
-              <span className="skill-bar-pct">{skill.pct}%</span>
+        {/* ── Two-column layout ── */}
+        <div className="skills-body">
+          {/* Tech tags */}
+          <div className="skills-tags-col" data-animate="left">
+            <div className="tech-grid">
+              {techStack.map((t) => (
+                <span className="tech-pill" key={t}>
+                  {t}
+                </span>
+              ))}
             </div>
           </div>
-        ))}
+
+          {/* Personal + info */}
+          <div className="skills-info-col" data-animate="right">
+            <div className="skills-soft">
+              <h3 className="skills-sub-heading">SOFT SKILLS</h3>
+              <div className="skills-soft-tags">
+                {personalSkills.map((s) => (
+                  <span className="skills-soft-tag" key={s}>
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="skills-availability">
+              <span className="avail-dot" />
+              <div>
+                <p className="avail-label">AVAILABILITY</p>
+                <p className="avail-status">Open to opportunities</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

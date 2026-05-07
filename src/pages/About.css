@@ -1,210 +1,161 @@
-/* ══════════════════════════════════════════════
-   ABOUT
+﻿/* ══════════════════════════════════════════════
+   ABOUT — editorial redesign
    ══════════════════════════════════════════════ */
 .about {
-  position: relative;
-  padding: 100px 48px;
-  border-top: 1px solid var(--line);
-  overflow: hidden;
+  background: #0a0b0e;
+  border-top: 1px solid #1a2530;
 }
 
-.about-bg-text {
-  position: absolute;
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 64px;
+}
+
+/* ── Section header ── */
+.about-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.about-index {
   font-family: var(--font-head);
-  font-size: clamp(180px, 22vw, 320px);
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(74, 158, 202, 0.06);
-  letter-spacing: -10px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  white-space: nowrap;
+  font-size: clamp(80px, 12vw, 160px);
+  line-height: 1;
+  color: #ffffff08;
+  letter-spacing: -4px;
+  flex-shrink: 0;
   user-select: none;
-  pointer-events: none;
-  filter: blur(3px);
-  animation: floatText 8s ease-in-out infinite;
-}
-@keyframes floatText {
-  0%,
-  100% {
-    transform: translate(-50%, -50%) rotate(-2deg);
-  }
-  50% {
-    transform: translate(-50%, -52%) rotate(1deg);
-  }
 }
 
-.about-inner {
-  position: relative;
-  z-index: 2;
+.about-header-text {
+  flex: 1;
+  padding-bottom: 12px;
+}
+
+.about-title {
+  font-family: var(--font-head);
+  font-size: clamp(40px, 5vw, 72px);
+  color: #ffffff;
+  letter-spacing: 8px;
+  line-height: 1;
+  margin: 0 0 16px;
+}
+
+.about-header-line {
+  height: 1px;
+  background: #1a2530;
+  width: 100%;
+}
+
+/* ── Body two-column ── */
+.about-body-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
-  max-width: 1200px;
-  margin: 0 auto;
+  align-items: center;
 }
 
-.about-heading {
-  font-family: var(--font-head);
-  font-size: clamp(52px, 7vw, 90px);
-  color: var(--white);
-  letter-spacing: 2px;
-  line-height: 0.9;
-  margin-bottom: 24px;
-}
-
-.about-body {
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--text);
-  max-width: 480px;
-  margin-bottom: 40px;
-}
-
-.about-pillars {
+/* ── Bio ── */
+.about-bio {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
-.about-pillar {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 16px 20px;
-  border: 1px solid var(--line);
-  background: transparent;
-  transition: border-color 0.2s;
-}
-.about-pillar:hover {
-  border-color: var(--accent);
-}
-
-.pillar-label {
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--accent);
-}
-
-.pillar-items {
-  font-size: 13px;
-  color: var(--text-dim);
+.about-bio p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #7a8a9a;
   margin: 0;
 }
 
-.about-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
+.about-email-link {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #4a9eca;
+  text-decoration: none;
+  border-bottom: 1px solid #4a9eca44;
+  padding-bottom: 3px;
+  margin-top: 8px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.about-email-link:hover {
+  color: #ffffff;
+  border-color: #ffffff44;
 }
 
-.about-card {
-  position: relative;
-  width: 100%;
-  max-width: 340px;
-  padding: 36px 28px;
-  border: 1px solid var(--line);
-  background: transparent;
+/* ── Quote image panel (centered and constrained) ── */
+.about-image-panel {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  overflow: hidden;
-  text-align: center;
-}
-.about-card-glow {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: var(--accent);
-  opacity: 0.06;
-  filter: blur(60px);
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
-}
-.about-card-initials {
-  font-family: var(--font-head);
-  font-size: 56px;
-  letter-spacing: 8px;
-  color: var(--accent);
-  opacity: 0.7;
-  line-height: 1;
-}
-.about-card-name {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--white);
-  letter-spacing: 1px;
-}
-.about-card-role {
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: var(--text-dim);
-}
-.about-card-divider {
-  width: 40px;
-  height: 1px;
-  background: var(--line);
-  margin: 4px 0;
-}
-.about-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
   justify-content: center;
-}
-.card-tag {
-  font-size: 9px;
-  letter-spacing: 1.5px;
-  padding: 4px 10px;
-  border: 1px solid var(--line);
-  color: var(--text-dim);
-}
-
-/* Make small tags fully transparent so background image shows through */
-.card-tag {
-  background: transparent;
-}
-.about-card-location {
-  font-size: 11px;
-  color: var(--text-dim);
-  margin-top: 4px;
-}
-
-/* ── Optional design2.jpg background for brief profile page ──
-  If `design2.jpg` lives under `src/assets/images`, it will be bundled and
-  referenced here. Example path: `src/assets/images/design2.jpg`. */
-.about.background-design2 {
-  /* keep existing background as fallback */
-  background: var(--bg);
-  position: relative;
   overflow: hidden;
+  max-width: 560px;
+  width: 100%;
+  margin-left: auto;
 }
-.about.background-design2::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("../assets/images/design2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-  /* parallax translate comes from JS-set CSS var */
-  transform: translateY(var(--parallax-y, 0px)) scale(1.02);
-  will-change: transform;
+
+.about-quote-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 72vh;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 4px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.55);
+  transition: transform 0.35s ease, filter 0.35s ease;
 }
-.about.background-design2::after {
-  /* dark overlay for readability */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(9, 12, 16, 0.55);
-  z-index: 1;
+.about-image-panel:hover .about-quote-img {
+  transform: translateY(-4px) scale(1.01);
+  filter: brightness(1) saturate(1);
 }
-.about.background-design2 .about-inner {
-  position: relative;
-  z-index: 2; /* ensures content sits above image + overlay */
+
+/* Location */
+.about-location {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #5a7a90;
+}
+
+.location-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4a9eca;
+  box-shadow: 0 0 8px #4a9eca88;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .about-container {
+    padding: 80px 40px;
+  }
+  .about-body-row {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .about-container {
+    padding: 64px 24px;
+  }
+  .about-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about-header {
+    gap: 16px;
+    margin-bottom: 48px;
+  }
 }

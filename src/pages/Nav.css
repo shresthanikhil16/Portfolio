@@ -100,7 +100,7 @@
 }
 
 .nav-link--active {
-  color: var(--white);
+  color: var(--accent);
 }
 
 /* ── Right actions ── */
@@ -111,8 +111,21 @@
   flex-shrink: 0;
 }
 
-/* ── "Hire Me" CTA ── */
+/* ── "Hire Me" CTA — kept for reference, hidden */
 .nav-cta {
+  display: none;
+}
+
+/* ── Phone number ── */
+.nav-phone {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+/* ── "Hire Me" CTA ── */
+.nav-cta-UNUSED {
   display: inline-block;
   font-size: 11px;
   letter-spacing: 2px;

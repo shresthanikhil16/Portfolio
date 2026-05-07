@@ -4,21 +4,21 @@
 
 /* ── TOKENS ──────────────────────────────────── */
 :root {
-  --bg: #090c10;
-  --bg-2: #0d1219;
-  --bg-3: #111922;
-  --surface: #141e28;
-  --line: #1e2d3d;
-  --text: #c8d8e8;
-  --text-dim: #5a7a90;
-  --text-bright: #eef4f8;
-  --accent: #4a9eca;
-  --accent-dim: rgba(74, 158, 202, 0.15);
-  --accent-glow: rgba(74, 158, 202, 0.35);
-  --white: #f0f6fb;
-  --nav-bg: rgba(9, 12, 16, 0.88);
-  --font-head: "Bebas Neue", "Impact", "Arial Black", sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --bg: #0F172A; /* Deep Navy */
+  --bg-2: #2E2E2E; /* Charcoal */
+  --bg-3: #111827;
+  --surface: #2E2E2E;
+  --line: #22272B;
+  --text: #DCC8AD; /* Warm beige for primary text */
+  --text-dim: #BDAE98;
+  --text-bright: #FAF7F3;
+  --accent: #DCC8AD; /* warm accent */
+  --accent-dim: rgba(220,200,173,0.12);
+  --accent-glow: rgba(220,200,173,0.28);
+  --white: #F7F6F5;
+  --nav-bg: rgba(15, 23, 42, 0.9);
+  --font-head: "Futura PT", "Futura", "Century Gothic", "Trebuchet MS", sans-serif;
+  --font-body: "Futura PT", "Futura", "Century Gothic", system-ui, sans-serif;
 }
 
 /* ── LIGHT THEME OVERRIDES ───────────────────── */
