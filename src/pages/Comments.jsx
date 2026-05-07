@@ -26,7 +26,6 @@ export default function Comments() {
     <section className="comments" id="comments">
       <div className="comments-container">
         <div className="comments-header" data-animate>
-          <span className="comments-index">04</span>
           <div className="comments-header-text">
             <h2 className="comments-title">WHAT COLLEAGUES SAY</h2>
             <div className="comments-header-line" />

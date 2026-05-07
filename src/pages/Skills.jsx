@@ -27,7 +27,6 @@ export default function Skills() {
       <div className="skills-container">
         {/* ── Header ── */}
         <div className="skills-header" data-animate>
-          <span className="skills-index">03</span>
           <div className="skills-header-text">
             <h2 className="skills-title">TECH STACK</h2>
             <div className="skills-header-line" />

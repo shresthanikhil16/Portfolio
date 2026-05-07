@@ -1,0 +1,74 @@
+.showcase-card {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.showcase-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(124, 58, 237, 0.15) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.showcase-card:hover::before {
+  opacity: 1;
+}
+
+.showcase-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(124, 58, 237, 0.25);
+}
+
+.showcase-card .right-side-menu a {
+  position: relative;
+  opacity: 0.75;
+  transition: all 0.2s ease;
+}
+
+.showcase-card .right-side-menu a::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 0;
+  left: -8px;
+  background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 1), transparent);
+  transition: height 0.3s ease;
+}
+
+.showcase-card .right-side-menu a:hover {
+  opacity: 1;
+  color: rgba(124, 58, 237, 1);
+}
+
+.showcase-card .right-side-menu a:hover::before {
+  height: 16px;
+}
+
+/* Particle effect background */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-12px) translateX(4px); }
+}
+
+.showcase-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(255, 100, 100, 0.1) 0%, transparent 25%),
+    radial-gradient(circle at 75% 75%, rgba(100, 100, 255, 0.1) 0%, transparent 25%);
+  animation: float 8s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+

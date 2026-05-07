@@ -76,7 +76,7 @@ export default function Nav({ theme, toggleTheme }) {
             </svg>
           )}
         </button>
-        <span className="nav-phone">+977 984-123-4567</span>
+        <span className="nav-phone">+977 9867059367</span>
         <button
           className={`nav-hamburger${menuOpen ? " nav-hamburger--open" : ""}`}
           onClick={(e) => {

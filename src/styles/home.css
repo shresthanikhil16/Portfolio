@@ -1,0 +1,65 @@
+/* Card Gradient Background */
+.showcase-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 40, 0.95) 0%,
+    rgba(10, 10, 20, 0.98) 50%,
+    rgba(5, 5, 10, 1) 100%
+  );
+  box-shadow: inset 0 0 100px rgba(79, 70, 229, 0.15);
+}
+
+/* Floating Embers / Particles Effect */
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particles-container::before,
+.particles-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #ffaa00, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #ff5500, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 50px 160px, #ffaa00, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #ff0000, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #ff5500, rgba(0,0,0,0)),
+    radial-gradient(3px 3px at 160px 120px, #ffaa00, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.4;
+  animation: floatUp 15s linear infinite;
+}
+
+.particles-container::after {
+  background-size: 300px 300px;
+  animation-duration: 20s;
+  animation-delay: -5s;
+  opacity: 0.2;
+  filter: blur(1px);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1.2);
+    opacity: 0;
+  }
+}

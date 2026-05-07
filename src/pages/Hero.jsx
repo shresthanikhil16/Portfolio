@@ -45,14 +45,6 @@ export default function Hero() {
 
         <div className="hero-socials" data-animate="left" data-delay="4">
           <a
-            href="https://behance.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Behance"
-          >
-            Bē
-          </a>
-          <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -69,7 +61,7 @@ export default function Hero() {
             in
           </a>
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/prathamstha88/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -104,7 +96,10 @@ export default function Hero() {
       </div>
 
       {/* ── Right photo (fixed/sticky on wide screens) ── */}
-      <div className={`hero-photo ${isSticky ? "hero-photo--fixed" : ""}`} data-animate="right">
+      <div
+        className={`hero-photo ${isSticky ? "hero-photo--fixed" : ""}`}
+        data-animate="right"
+      >
         <img src={heroImg} alt="Pratham Shrestha workspace" />
       </div>
     </section>

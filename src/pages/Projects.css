@@ -14,24 +14,11 @@
 
 /* ── Section header ── */
 .projects-header {
-  display: flex;
-  align-items: flex-end;
-  gap: 32px;
-  margin-bottom: 80px;
-}
-
-.projects-index {
-  font-family: var(--font-head);
-  font-size: clamp(80px, 12vw, 160px);
-  line-height: 1;
-  color: #ffffff08;
-  letter-spacing: -4px;
-  flex-shrink: 0;
-  user-select: none;
+  display: block;
+  margin-bottom: 64px;
 }
 
 .projects-header-text {
-  flex: 1;
   padding-bottom: 12px;
 }
 

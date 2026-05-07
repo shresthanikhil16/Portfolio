@@ -40,10 +40,8 @@ export default function Projects() {
   return (
     <section className="projects" id="projects">
       <div className="projects-container">
-
         {/* ── Section header ── */}
         <div className="projects-header" data-animate>
-          <span className="projects-index">02</span>
           <div className="projects-header-text">
             <h2 className="projects-title">SELECTED WORK</h2>
             <div className="projects-header-line" />
@@ -89,7 +87,6 @@ export default function Projects() {
             </a>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -7,7 +7,6 @@ export default function About() {
       <div className="about-container">
         {/* ── Section header ── */}
         <div className="about-header" data-animate>
-          <span className="about-index">01</span>
           <div className="about-header-text">
             <h2 className="about-title">ABOUT</h2>
             <div className="about-header-line" />

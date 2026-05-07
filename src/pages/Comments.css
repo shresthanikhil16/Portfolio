@@ -11,17 +11,12 @@
 }
 
 .comments-header {
-  display: flex;
-  align-items: flex-end;
-  gap: 24px;
-  margin-bottom: 40px;
+  display: block;
+  margin-bottom: 64px;
 }
 
-.comments-index {
-  font-family: var(--font-head);
-  font-size: clamp(64px, 10vw, 120px);
-  color: rgba(255,255,255,0.04);
-  flex-shrink: 0;
+.comments-header-text {
+  padding-bottom: 12px;
 }
 
 .comments-title {

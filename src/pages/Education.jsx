@@ -49,7 +49,6 @@ export default function Education() {
             data-animate="left"
             data-delay={i + 2}
           >
-            <div className="edu-index">{String(i + 1).padStart(2, "0")}</div>
             <div className="edu-connector">
               <div className="edu-dot" style={{ background: edu.accent }} />
               {i < education.length - 1 && <div className="edu-line" />}
