@@ -2,7 +2,15 @@
    SKILLS — tech stack redesign
    ══════════════════════════════════════════════ */
 .skills-section {
-  background: #0a0b0e;
+  background-color: #0a0b0e;
+  /* background image with subtle dark overlay for readability */
+  background-image: linear-gradient(rgba(10,11,14,0.72), rgba(10,11,14,0.72)),
+    url('../assets/images/download.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Keep the image fixed while scrolling (desktop); disable on small screens for performance */
+  background-attachment: fixed;
   border-top: 1px solid #1a2530;
 }
 
@@ -216,6 +224,10 @@
   .skills-body {
     grid-template-columns: 1fr;
     gap: 56px;
+  }
+  /* Disable fixed backgrounds on smaller screens for smoother scrolling */
+  .skills-section {
+    background-attachment: scroll;
   }
 }
 @media (max-width: 560px) {

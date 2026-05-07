@@ -68,11 +68,7 @@ export default function App() {
 
   return (
     <div className="portfolio" data-theme={theme}>
-      {/* Page load overlay — fades out automatically via CSS animation */}
-      <div className="page-loader" aria-hidden="true">
-        <span className="page-loader-name">PS</span>
-        <span className="page-loader-bar" />
-      </div>
+      {/* Removed page-loader (startup PS splash) */}
 
       <Nav theme={theme} toggleTheme={toggleTheme} />
       <Hero />
