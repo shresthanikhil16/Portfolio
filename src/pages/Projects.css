@@ -2,7 +2,13 @@
    PROJECTS — editorial row design
    ══════════════════════════════════════════════ */
 .projects {
-  background: #0a0b0e;
+  background-color: #0a0b0e;
+  /* background image for Selected Work with dark overlay for readability */
+  background-image: linear-gradient(rgba(10,11,14,0.72), rgba(10,11,14,0.72)),
+    url('../assets/images/mango.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-top: 1px solid #1a2530;
 }
 
@@ -74,7 +80,7 @@
   font-family: var(--font-head);
   font-size: 13px;
   letter-spacing: 2px;
-  color: #2a3d52;
+  color: #7a8a9a;
   position: relative;
   z-index: 1;
   flex-shrink: 0;
@@ -127,7 +133,7 @@
 }
 .project-row-desc {
   font-size: 13px;
-  color: #3a5268;
+  color: #7a8a9a;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -162,7 +168,7 @@
 .project-row-tech span {
   font-size: 10px;
   letter-spacing: 1px;
-  color: #2a3d52;
+  color: #7a8a9a;
   padding: 3px 8px;
   border: 1px solid #1a2530;
   transition: border-color 0.2s, color 0.2s;
@@ -174,13 +180,13 @@
 .project-row-year {
   font-size: 10px;
   letter-spacing: 2px;
-  color: #2a3d52;
+  color: #7a8a9a;
 }
 
 /* Arrow */
 .project-row-arrow {
   font-size: 20px;
-  color: #2a3d52;
+  color: #7a8a9a;
   position: relative;
   z-index: 1;
   flex-shrink: 0;
