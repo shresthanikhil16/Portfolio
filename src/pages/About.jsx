@@ -8,7 +8,7 @@ export default function About() {
         {/* ── Section header ── */}
         <div className="about-header" data-animate>
           <div className="about-header-text">
-            <h2 className="about-title">ABOUT</h2>
+            <h2 className="about-title">ABOUT ME</h2>
             <div className="about-header-line" />
           </div>
         </div>
@@ -17,7 +17,7 @@ export default function About() {
         <div className="about-body-row">
           <div className="about-bio" data-animate="left">
             <p>
-              I&apos;m Pratham Shrestha — a software developer based in
+              I&apos;m Pratham Shrestha, a software developer based in
               Kathmandu, Nepal. I craft performant, accessible, and beautiful
               web experiences with a focus on delightful interactions and clean
               architecture.
@@ -31,7 +31,7 @@ export default function About() {
               href="mailto:prathamshrestha@email.com"
               className="about-email-link"
             >
-              prathamshrestha@email.com ↗
+              officialblade007@gmail.com ↗
             </a>
 
             <div className="about-location">
