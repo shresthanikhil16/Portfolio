@@ -3,14 +3,21 @@
    ══════════════════════════════════════════════ */
 .skills-section {
   background-color: #0a0b0e;
-  /* background image with subtle dark overlay for readability */
+  /* background image with subtle dark overlay for readability
+     include a JPG fallback for devices/browsers that don't support AVIF */
   background-image: linear-gradient(rgba(10,11,14,0.72), rgba(10,11,14,0.72)),
-    url('../assets/images/techstack.avif');
+    url('../assets/images/techstack.avif'), url('../assets/images/works.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Keep the image fixed while scrolling (desktop); disable on small screens for performance */
-  background-attachment: fixed;
+  border-top: 1px solid #1a2530;
+}
+
+/* Desktop: keep background fixed only on larger viewports */
+@media (min-width: 900px) {
+  .skills-section {
+    background-attachment: fixed;
+  }
   border-top: 1px solid #1a2530;
 }
 
