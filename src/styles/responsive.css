@@ -135,3 +135,89 @@
     gap: 24px;
   }
 }
+
+/* ── Global helpers for small devices ── */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Extra small phones — tighten spacing and font scales */
+@media (max-width: 420px) {
+  .nav {
+    padding: 0 16px;
+    height: 60px;
+  }
+  .nav-phone {
+    display: none;
+  }
+  .nav-hamburger {
+    width: 34px;
+    height: 34px;
+    padding: 4px;
+  }
+
+  .hero {
+    padding-bottom: 8px;
+  }
+  .hero-left {
+    padding: 80px 16px 32px;
+  }
+  .hero-photo {
+    height: 60vw;
+    min-height: 180px;
+  }
+  .hero-title-first,
+  .hero-title-last,
+  .section-title {
+    font-size: clamp(28px, 8vw, 48px);
+    letter-spacing: 1.5px;
+  }
+  .hero-role {
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  .hero-cta-row {
+    gap: 12px;
+    flex-direction: column;
+  }
+  .cta-btn {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+
+  /* Sections: reduce outer padding for narrow viewports */
+  .projects,
+  .manifesto,
+  .skills,
+  .closing,
+  .about,
+  .education,
+  .contact {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+
+  .project-grid,
+  .skills-grid,
+  .skills-bars-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-inner,
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .spline-right,
+  .spline-showcase {
+    height: 50vw;
+    min-height: 180px;
+  }
+}
