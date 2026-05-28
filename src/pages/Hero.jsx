@@ -5,20 +5,52 @@ import "./Hero.css";
 export default function Hero() {
   const ref = useRef(null);
   const [isSticky, setIsSticky] = useState(true);
+  const [useHeroBackground, setUseHeroBackground] = useState(() => {
+    try {
+      return window.innerWidth < 900;
+    } catch (e) {
+      return false;
+    }
+  });
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Observe hero intersection for sticky behavior on large screens
     const obs = new IntersectionObserver(
-      ([entry]) => setIsSticky(entry.isIntersecting),
+      ([entry]) => {
+        const isLarge = window.innerWidth >= 900;
+        setIsSticky(entry.isIntersecting && isLarge);
+      },
       { threshold: 0.06 },
     );
     obs.observe(el);
-    return () => obs.disconnect();
+
+    // Keep track of viewport size to toggle using the hero background
+    const onResize = () => {
+      const small = window.innerWidth < 900;
+      setUseHeroBackground(small);
+      if (small) setIsSticky(false);
+    };
+    window.addEventListener("resize", onResize, { passive: true });
+
+    // initialize
+    onResize();
+
+    return () => {
+      obs.disconnect();
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   return (
-    <section className="hero" id="hero" ref={ref}>
+    <section
+      className={`hero ${useHeroBackground ? "hero--bg" : ""}`}
+      id="hero"
+      ref={ref}
+      style={useHeroBackground ? { backgroundImage: `url(${heroImg})` } : undefined}
+    >
       {/* ── Left content ── */}
       <div className="hero-left">
         <h1 className="hero-title" data-animate="left">
@@ -99,9 +131,10 @@ export default function Hero() {
       <div
         className={`hero-photo ${isSticky ? "hero-photo--fixed" : ""}`}
         data-animate="right"
-      >
-        <img src={heroImg} alt="Pratham Shrestha workspace" />
-      </div>
+        style={useHeroBackground ? { display: "none" } : { backgroundImage: `url(${heroImg})` }}
+        role="img"
+        aria-label="Pratham Shrestha workspace"
+      />
     </section>
   );
 }
