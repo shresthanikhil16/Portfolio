@@ -17,7 +17,7 @@
   flex: 0 0 48%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 0 60px 80px 64px;
 }
 
@@ -154,6 +154,7 @@
     z-index: 2;
     flex: 0 0 48%;
     margin-right: 52%;
+    justify-content: flex-end;
   }
   .hero-photo img {
     position: absolute;
@@ -163,7 +164,10 @@
     object-fit: cover;
     object-position: center;
   }
-  .hero-photo::before { z-index: 1; pointer-events: none; }
+  .hero-photo::before {
+    z-index: 1;
+    pointer-events: none;
+  }
 }
 
 /* ── Responsive ── */
@@ -174,6 +178,7 @@
   }
   .hero-left {
     flex: none;
+    justify-content: flex-end;
     padding: 120px 32px 48px;
   }
   .hero-photo {

@@ -8,7 +8,7 @@ export default function About() {
         {/* ── Section header ── */}
         <div className="about-header" data-animate>
           <div className="about-header-text">
-            <h2 className="about-title">ABOUT ME</h2>
+            <h2 className="about-title">ABOUT</h2>
             <div className="about-header-line" />
           </div>
         </div>
@@ -28,7 +28,7 @@ export default function About() {
               technically sound.
             </p>
             <a
-              href="mailto:prathamshrestha@email.com"
+              href="mailto:officialblade007@gmail.com"
               className="about-email-link"
             >
               officialblade007@gmail.com ↗
